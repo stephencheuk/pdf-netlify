@@ -1,0 +1,53 @@
+https://github.com/colbyfayock/my-puppeteer-function
+https://www.youtube.com/watch?v=DnpjWeDI12Q
+
+npm init -y
+npm i netlify-cli -g
+netlify login
+netlify dev
+create file /functions/meta.js with follow script
+
+exports.handler = async function (event, context) {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      status: 'OK'
+    })
+  }
+}
+
+create file /netlify.toml with follow script
+
+[build]
+  functions = "functions"
+
+
+yarn add chrome-aws-lambda puppeteer-core dotenv
+
+add /.env with follow content
+
+CHORME_EXECUTABLE_PATH="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+
+update /functions/meta.js
+const chromium = require('chrome-aws-lambda')
+const puppeteer = require('puppeteer-core')
+
+exports.handler = async function (event, context) {
+
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    executablePath: process.env.CHORME_EXECUTABLE_PATH || await chromium.executablePath,
+    headless: true
+  })
+
+  await browser.close();
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      status: 'OK'
+    })
+  }
+}
+
+netlify dev

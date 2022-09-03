@@ -1,0 +1,591 @@
+<html>
+<head>
+<title> Stock Take </title>
+
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+<style>
+
+.liststyle1 { background-color: #FFFFFF }
+.liststyle2 { background-color: #EFEFEF }
+.TLine { border-style: solid; border-width: 1px 0 0 0; border-color: #CFCFCF; }
+.BLine { border-style: solid; border-width: 0 0 1px 0; border-color: #CFCFCF; }
+.ColorSizeBorder { border-color: #CFCFCF; }
+body, td {
+
+
+  /*font-family: arial, helvetica, mingliu;*/
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 10px;
+  margin: 0;
+  padding1: 0;
+
+  vertical-align: Top;
+/* Required For PDF */
+  white-space: normal;
+}
+
+#OuterBorder{
+
+
+  width: 780px;
+  height: 1115px;
+
+}
+.TBorder2 {
+    font-size: 1em; font-family: Arial, Verdana; border: 0px none #0C0C0C; border-collapse: collapse
+    -moz-border-radius-topleft
+    -moz-border-radius-topright
+    -moz-border-radius-bottomleft
+    -moz-border-radius-bottomright
+}
+.Disappear { display: none }
+Table.Fixed { table-layout: fixed; }
+TD.Fixed { white-space: nowrap; overflow:hidden; text-overflow:ellipsis; }
+.Fixed { white-space: nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+table.FixedHeight td
+{
+
+
+  height: 17px;
+
+}
+
+td.FixedHeight
+{
+
+
+  height: 17px;
+
+}
+
+.TitleHeader{
+  background: #378845;
+  font-size: 18px;
+
+
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.Amount{
+  font-size: 18px;
+
+
+  color: #000000;
+  font-style: italic;
+  font-weight: bold;
+}
+.Nos{
+  font-size: 18px;
+
+
+  color: #000000;
+  font-weight: bold;
+}
+.FloatImage{
+  position: absolute;
+  float: left;
+}
+.ProdImage{
+  position: absolute;
+  float: left;
+}
+.SideTitle{
+  text-align: right;
+}
+.Titles{
+  font-weight: bold;
+}
+.tel {width: 50%;}
+.fax {width: 50%;}
+.lt { border-top-style: solid; border-top-width: 1px; border-top-color: #A0A0A0; }
+.lr { border-right-style: solid; border-right-width: 1px; border-right-color: #A0A0A0; }
+.ll { border-left-style: solid; border-left-width: 1px; border-left-color: #A0A0A0; }
+.lb { border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #A0A0A0; }
+
+.fake_lt { border-top-style: solid; border-top-width: 1px; border-top-color: #FFFFFF; }
+.fake_lr { border-right-style: solid; border-right-width: 1px; border-right-color: #FFFFFF; }
+.fake_ll { border-left-style: solid; border-left-width: 1px; border-left-color: #FFFFFF; }
+.fake_lb { border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #FFFFFF; }
+
+
+
+  .lb2 { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A0A0A0; }
+  .lt2 { border-top-style: solid; border-top-width: 2px; border-top-color: #A0A0A0; }
+
+.ListTitle { background: #C0C0C0; }
+
+.RAlign { text-align: Right }
+.LAlign { text-align: Left }
+.CAlign { text-align: Center }
+.TAlign { vertical-align: Top; }
+.MAlign { vertical-align: Middle; }
+.BAlign { vertical-align: Bottom; }
+.ALIGN_QTY { text-align: right }
+.ALIGN_UNITPRICE { text-align: right }
+.ALIGN_DISCOUNT { text-align: right }
+.ALIGN_AMOUNT { text-align: right }
+.ALIGN_SUBTOTAL {
+  text-align: right;
+  border-top-style: solid; border-top-width: 1px;
+}
+.ALIGN_TOTAL {
+  border-top-style: solid; border-top-width: 1px;
+  border-bottom-style: double; border-bottom-width: 3px;
+  text-align: right;
+  height: 14pt !important;
+}
+.P1_H2_1_ { width: 20%; color: white; background: #888888; font-weight: bold }
+.P1_H2_1 { width: 16%; color: #000000; background: #dcdcdc; font-weight: bold }
+.P1_H2_2 { width: 84%; }
+.P1_H2_3 { width: 34%; }
+
+.P2_H2_1 { width: 16%; color: #000000; background: #EFEFEF; font-weight: bold }
+.P2_H2_2 { width: 84%;  background: #EFEFEF;}
+.P2_H2_3 { width: 34%;  background: #EFEFEF;}
+
+.BGC1 {  color: white; background: #888888 }
+.BGC {  color: #000000; background: #dcdcdc }
+.TableBorder { border-collapse: collapse; border-color: #a0a0a0; }
+.TableBorderBOM { border-collapse: collapse; border-color: #000000;  }
+.HeaderCell1 { color: white; background: #888888; font-weight: bold }
+.HeaderCell { color: #000000; background: #dcdcdc; font-weight: bold }
+
+
+.RowColCell { width: 20px;  color: #000000; background: #dcdcdc; font-weight: bold; font-size: 5pt; text-align: center }
+.BigFontFloat { position: relative; font-size: 9pt; font-weight: bold}
+.PDFSmallerFont2 { font-size: 6pt; vertical-align: middle }
+.PDFSmallerFontPaddingTop2 { padding-top: 2px }
+
+.RowColCellEmpty { width: 20px; }
+.RowColCellTotal { background: #f0f0f0; }
+table { border-color: #A0A0A0 }
+.EmptyCell {empty-cells:show}
+tr.TableColFixer { visibility: hidden; display: none; height: 0px }
+.ExtraMargin { margin-top: -1px; height: 16px !important;}
+
+/*
+.t1r1{ width: 12%; display: none }
+.t1r2{ width: 12% }
+.t1r1_2{ width: 24% }
+.t1r3{ width: 7% }
+.t1r4{ width: 9%; display: none }
+.t1r5{ width: 9%; display: none }
+.t1r6{ width: 10%; display: none }
+.t1r7{ width: 36% }
+.t1r7a{ width: 48% }
+.t1r8{ width: 5% }
+*/
+
+.t1r1{ width: 12%; display: none }
+.t1r2{ width: 12% }
+.t1r1_2{ width: 24% }
+.t1r3{ width: 7% }
+.t1r4{ width: 9%; display: none }
+.t1r5{ width: 9%; display: none }
+.t1r6{ width: 10%; display: none }
+.t1r7{ width: 36% }
+.t1r7a{ width: 48% }
+.t1r71a{ width: 88% }
+.t1r71{ width: 76% }
+.t1r8{ width: 4% }
+
+.t1r11{ width: 6% }
+.t1r12{ width: 6% }
+
+.t2r1{ width: 100% }
+.t2r1a{ width: 30% }
+.t2r1b{ width: 70% }
+
+.t3r1{ width: 15% }
+.t3r2{ width: 15% }
+.t3r3{ width: 10% }
+.t3r4{ width: 10% }
+.t3r5{ width: 15% }
+.t3r6{ width: 15% }
+
+.t4r1{ width: 85% }
+.t4r2{ width: 15% }
+
+.t5r1_2{ width: 25% }
+.t5r1{ width: 10% }
+.t5r2{ width: 17% }
+.t5r3{ width: 6% }
+.t5r4{ width: 6% }
+.t5r5{ width: 6% }
+.t5r6{ width: 6% }
+.t5r7{ width: 6% }
+.t5r8{ width: 6% }
+.t5r9{ width: 6% }
+.t5r10{ width: 6% }
+.t5r11{ width: 0% }
+.t5r12{ width: 0% }
+.t5r13{ width: 10% }
+.t5r14{ width: 15% }
+.t5r14_10{ width: 15% }
+.t5r14_9{ width: 20% }
+.t5r14_8{ width: 15% }
+.t5r14_7{ width: 21% }
+.t5r14_6{ width: 27% }
+.t5r14_5{ width: 33% }
+.t5r14_4{ width: 39% }
+.t5r14_3{ width: 45% }
+.t5r14_2{ width: 51% }
+.t5r14_1{ width: 57% }
+.t5SizeLabel{  }
+
+.t6r1{ width: 20% }
+.t6r2{ width: 45% }
+.t6r3{ width: 5% }
+.t6r4{ width: 15% }
+.t6r5{ width: 15% }
+
+.t7r1{ width: 8% }
+.t7r2{ width: 10% }
+.t7r3{ width: 40% }
+.t7r4{ width: 10% }
+.t7r5{ width: 10% }
+.t7r6{ width: 22% }
+
+.t67r1{ width: 15% }
+.t67r2{ width: 35% }
+.t67r3{ width: 15% }
+.t67r4{ width: 10% }
+.t67r5{ width: 15% }
+.t67r6{ width: 10% }
+
+/**/
+
+.t8r1{ width: 20% }
+.t8r2{ width: 20% }
+.t8r3{ width: 10% }
+.t8r4{ width: 10% }
+.t8r5{ width: 15% }
+.t8r6{ width: 30% }
+
+.t9r2{ width: 25% }
+.t9r3{ width: 5% }
+.t9r4{ width: 5% }
+.t9r5{ width: 5% }
+.t9r6{ width: 5% }
+.t9r7{ width: 5% }
+.t9r8{ width: 5% }
+.t9r9{ width: 5% }
+.t9r10{ width: 5% }
+.t9r11{ width: 5% }
+.t9r12{ width: 5% }
+.t9r12_10{ width: 15% }
+.t9r12_9{ width: 20% }
+.t9r12_8{ width: 25% }
+.t9r12_7{ width: 30% }
+.t9r12_6{ width: 35% }
+.t9r12_5{ width: 40% }
+.t9r12_4{ width: 45% }
+.t9r12_3{ width: 50% }
+.t9r12_2{ width: 55% }
+.t9r12_1{ width: 60% }
+
+.t9r13{ width: 10% }
+
+.t10r1_2{ width: 25% }
+.t10r1{ width: 8% }
+.t10r2{ width: 10% }
+.t10r3{ width: 5% }
+.t10r4{ width: 5% }
+.t10r5{ width: 5% }
+.t10r6{ width: 5% }
+.t10r7{ width: 5% }
+.t10r8{ width: 5% }
+.t10r9{ width: 5% }
+.t10r10{ width: 5% }
+.t10r11{ width: 5% }
+.t10r12{ width: 5% }
+.t10r13{ width: 10% }
+.t10r14{ width: 15% }
+.t10r14_10{ width: 22% }
+.t10r14_9{ width: 27% }
+.t10r14_8{ width: 32% }
+.t10r14_7{ width: 37% }
+.t10r14_6{ width: 42% }
+.t10r14_5{ width: 47% }
+.t10r14_4{ width: 52% }
+.t10r14_3{ width: 57% }
+.t10r14_2{ width: 62% }
+.t10r14_1{ width: 67% }
+
+.tr20r1 { width: 10% }
+.tr20r2 { width: 15% }
+.tr20r3 { width: 10% }
+.tr20r4 { width: 10% }
+.tr20r5 { width: 5% }
+.tr20r6 { width: 5% }
+.tr20r7 { width: 10% }
+.tr20r8 { width: 5% }
+.tr20r9 { width: 10% }
+.tr20r910 { width: 20% }
+
+.DiffClass1{ color: red !important }
+
+</style>
+<table width="100%" cellspacing=0 cellpadding=0 class='Fixed' id='OuterBorder'>
+<tr><td height='100%'>
+<table width="100%" cellspacing=0 cellpadding=0 class='Fixed ' style='height:100%'>
+<tr><td>
+
+<div style="width: 100%; border-bottom: 3px double black; padding-bottom: 5px; margin-bottom: 10px">
+<table cellspacing=0 cellpadding=0 width="100%" class='Fixed'>
+<tr>
+  <td style="width:160px"></td>
+  <td style="width:100%; text-align: center; vertical-align: bottom; font-size: 9px">
+    <img src="file:///home/WWW/super.orderpro.com_11/Files/garment14s/Logo/Garment.png" height="60"><br>
+    Unit B, 20/F, Kai Kwong Commercial Building, 332-334 Lockhart Road, Wanchai, Hong Kong<br>
+    TEL:&nbsp;852-2525-0066 &nbsp;&nbsp;&nbsp;&nbsp; FAX:&nbsp;852-2504-0240
+  </td>
+  <td style="width:160px; text-align: center; vertical-align: bottom">
+    <div style="border: 1px solid #ACACAC; font-weight: bold; font-size: 16px; padding: 4px; text-align: center">
+      <div style='width: 100%; display: none未批核'>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+  var flag = 0
+  if("未批核" == "" && "" != ""){
+    flag = 1;
+  }
+  if("未批核" != "" && "" == ""){
+    flag = 1;
+  }
+  if("未批核" == "" && "" == ""){
+    flag = 0;
+  }
+  if("未批核" != "" && "" != ""){
+    flag = 2;
+  }
+  if(flag == 1){
+    if("未批核" != ""){
+      document.write("<div style='text-align: center'>未批核</div>");
+    }else{
+      document.write("<div style='text-align: center'></div>");
+    }
+  }
+  if(flag == 2){
+    document.write("<div style='text-align: center'></div>");
+    document.write("<div style='text-align: center'>未批核</div>");
+  }
+//-->
+</SCRIPT>
+    </div>
+    <div style='width: 100%'>盤點</div>
+
+  </td>
+</tr>
+</table>
+</div>
+
+
+
+<tr><td height='100%'>
+<table width="100%" cellspacing=0 cellpadding=0 class='Fixed' style='height: 100%'>
+  <tr>
+    <td>
+    <table cellspacing=0 cellpadding=0 class='Fixed' width=100%>
+      <td style='width:40%;'>
+      
+      </td>
+      <td style='width:60%;'>
+        <table cellspacing="0" cellpadding="0" border="0" class='Fixed' width="100%">
+          <tr style1='display: none' class='TitleHeader'>
+            <td width="50%" height='0'></td>
+            <td width="10" height='0'></td>
+            <td width="50%" height='0'></td>
+
+          <tr>
+            <td class='SideTitle Fixed Titles MAlign Nos'>參考編號</td>
+            <td class='Fixed SideTitle Titles MAlign'>:&nbsp;</td>
+            <td class='Fixed1 Nos'>STK00000010</td>
+          <tr>
+            <td width="30%" class='Fixed SideTitle Titles '>日期</td>
+            <td class='Fixed SideTitle Titles'>:&nbsp;</td>
+            <td width="70%" class='Fixed'>09/29/2020</td>
+          <tr class="Disappear">
+            <td class='SideTitle Titles'>專案編號</td>
+            <td class='Fixed SideTitle Titles '>:&nbsp;</td>
+            <td class='Fixed1'></td>
+<!--[NoCustPO-->
+          <tr class="Disappear">
+            <td class='SideTitle Titles'>客戶訂單編號</td>
+            <td class='Fixed SideTitle Titles'>:&nbsp;</td>
+            <td class='Fixed1'></td>
+<!--NoCustPO]-->
+
+<!--[HiddenJobType-->
+
+<!--HiddenJobType]-->
+
+
+<!--[ZoneI-->
+          <tr class="Disappear">
+            <td class='SideTitle Titles'>存入倉位</td>
+            <td class='Fixed SideTitle Titles'>:&nbsp;</td>
+            <td class='Fixed1'></td>
+<!--ZoneI]-->
+
+<!--[ZoneO-->
+          <tr class="Disappear">
+            <td class='SideTitle Titles'>取出倉位</td>
+            <td class='Fixed SideTitle Titles'>:&nbsp;</td>
+            <td class='Fixed1'></td>
+<!--ZoneO]-->
+
+          <tr class="Disappear1">
+            <td class='SideTitle Titles'>盤點倉庫</td>
+            <td class='Fixed SideTitle Titles'>:&nbsp;</td>
+            <td class='Fixed1'>W29</td>
+
+<!--[ZoneA-->
+          <tr class="Disappear">
+            <td class='SideTitle Titles'>倉位</td>
+            <td class='Fixed SideTitle Titles'>:&nbsp;</td>
+            <td class='Fixed1'></td>
+<!--ZoneA]-->
+
+
+
+
+
+        </table>
+       </td>
+    </table>
+  <tr>
+    <td height='100%' class='TAlign'>
+      <table cellspacing=0 cellpadding=2 class='Fixed TBorder2' width="100%">
+        <tr>
+          <td class='t1r1 Fixed Titles ListTitle'>客戶編號</td>
+          <td class='t1r2 Fixed Titles ListTitle'>產品編號</td>
+          <td class='t1r71 Fixed Titles ListTitle'>產品名稱</td>
+          <td class='t1r3 Fixed Titles ListTitle ALIGN_QTY'>數量</td>
+          <td class='t1r8 Fixed Titles ListTitle ALIGN_UNIT'>單位</td>
+          <td class='t1r4 Fixed Titles ListTitle ALIGN_UNITPRICE'>&nbsp;</td>
+          <td class='t1r5 Fixed Titles ListTitle ALIGN_DISCOUNT'>&nbsp;</td>
+          <td class='t1r6 Fixed Titles ListTitle ALIGN_AMOUNT'>&nbsp;</td>
+      </table>
+<style>.SupplementTbl1 {border-top-style: solid; border-top-width: 1px; border-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-color: #FFFFFF;}</style><!--[RowLine--><!--RowBlock_FooterSignature-->
+<tr>
+<td>
+<table style="padding-top: 2px" class="Fixed FixedHeight" width="100%" border="0" CellPadding="0" CellSpacing="0" bordercolor='black'>
+<tr height="100%" >
+  <td width="48%" class="Fixed"></td>
+  <td width="4%">&nbsp;</td>
+  <td width="48%" class="Fixed"></td>
+</tr>
+</table>
+<!--RowLine]-->
+<!--[RowLine--><!--RowBlock_FooterSignature-->
+<table class="Fixed FixedHeight" width="100%" border="0" CellPadding="0" CellSpacing="0" bordercolor='black'>
+<tr>
+  <td class="Fixed">&nbsp;</td>
+</tr>
+</table>
+<!--RowLine]-->
+<!--[RowLine--><!--RowBlock_FooterSignature-->
+<table class="Fixed FixedHeight" width="100%" border="0" CellPadding="0" CellSpacing="0" bordercolor='black'>
+<tr>
+  <td class="Fixed">&nbsp;</td>
+</tr>
+</table>
+<!--RowLine]-->
+<!--[RowLine--><!--RowBlock_FooterSignature-->
+<table class="Fixed FixedHeight" width="100%" border="0" CellPadding="0" CellSpacing="0" bordercolor='black'>
+<tr>
+  <td class="Fixed">&nbsp;</td>
+</tr>
+</table>
+<!--RowLine]-->
+<!--[RowLine--><!--RowBlock_FooterSignature-->
+<table class="Fixed FixedHeight" width="100%" border="0" CellPadding="0" CellSpacing="0" bordercolor='black'>
+<tr>
+  <td width="48%" class="Fixed" style1="border-left-width: 1px; border-right-width: 1px; border-bottom-style: solid; border-top-width: 1px; border-bottom-width: 1px">&nbsp;</td>
+  <td width="4%">&nbsp;</td>
+  <td width="48%" class="Fixed" style="border-left-width: 1px; border-right-width: 1px; border-bottom-style: solid; border-top-width: 1px; border-bottom-width: 1px">&nbsp;</td>
+</tr>
+</table>
+<!--RowLine]-->
+<!--[RowLine--><!--RowBlock_FooterSignature-->
+<table class="Fixed FixedHeight" width="100%" border="0" CellPadding="0" CellSpacing="0" bordercolor='black'>
+<tr>
+  <td width="48%" class="Fixed">
+    <div style='display: box; display: -webkit-box; justify-content: space-between; -webkit-justify-content: space-between'>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </td>
+  <td width="4%">&nbsp;</td>
+  <td width="48%" class="Fixed">
+    <div style='display: box; display: -webkit-box; justify-content: space-between; -webkit-justify-content: space-between'>
+      <div style='-webkit-box-flex: 1; text-align: left'>簽署</div>
+      <div style='-webkit-box-flex: 1; text-align: left'></div>
+      <div style='-webkit-box-flex: 1; text-align: left'></div>
+    </div>
+  </td>
+</tr>
+</table>
+<!--RowLine]-->
+
+  <tr>
+    <td>
+</table>
+</table>
+<tr>
+  <td>
+    <div style='width: 100%'>
+      <div style='width: 40%; float:left; margin: 0; padding: 0;'><b>批核者:</b> 仍末批核. <b>製單者</b> Stephen.&nbsp;</div>
+      <div style='width: 40%; float:right; margin: 0; padding: 0; text-align: right'>頁: 1 / 1</div>
+    </div>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+//document.write("<div id='box' style='position:absolute; border:1px solid black;filter:alpha(opacity=0);'><font id='buffer'></font></div>");
+//
+//function getId(id){
+//  return document.getElementById(id);
+//}
+//function getTagName(id){
+//  return document.getElementsByTagName(id);
+//}
+//function CheckWidth(){
+//  var tables = getTagName("table");
+//  for(var y=0; y<tables.length; y++){
+//    var tds = tables[y].getElementsByTagName("td");
+//    for(var x=0; x<tds.length; x++){
+//      if(tds[x].getAttribute("zoomed") != 1){
+//        //alert([getId("buffer").clientWidth, tds[x].clientWidth]);
+//        var oWidth = tds[x].clientWidth;
+//        getId("buffer").innerHTML = tds[x].innerHTML;
+//        var cnt=0;
+//        var zoom = 100;
+//        while(getId("box").clientWidth > tds[x].clientWidth - 4){
+//          zoom--;
+//          getId("buffer").style.zoom = zoom + "%";
+//          cnt++;
+//          if(zoom < 1){
+//            break;
+//          }
+//          //alert([zoom, getId("buffer").clientWidth, tds[x].clientWidth]);
+//        }
+//        //alert([tds[x].childNodes, tds[x].childNodes[0].nodeValue, tds[x].childNodes.length]);
+//        tds[x].style.zoom = zoom + "%";
+//        tds[x].setAttribute("zoomed",1);
+//      }
+//    }
+//  }
+//  getId("buffer").innerHTML = getId("atd").innerHTML;
+//}
+//  window.onload=CheckWidth;
+//  window.onresize=CheckWidth;
+//-->
+</SCRIPT>
+</body>
+</html>
+<!-- {Caching} { 'DBName' => 'Transactions', 'ID' => '1001187' } {Caching} -->

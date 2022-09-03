@@ -1,0 +1,26 @@
+{
+  "name": "pdf-netlify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephencheuk/pdf-netlify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephencheuk/pdf-netlify/issues"
+  },
+  "homepage": "https://github.com/stephencheuk/pdf-netlify#readme",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "dotenv": "^16.0.2",
+    "puppeteer": "^17.1.0",
+    "puppeteer-core": "^17.1.0"
+  }
+}
